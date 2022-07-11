@@ -1,0 +1,223 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_01_SendMessage" this:_01_SendMessage.in_ChannelID="C03BM5MFLE9" this:_01_SendMessage.in_TextMeesage="Test From UiPath" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ubme="clr-namespace:UiPath.BAF.Models.Entity;assembly=UiPath.Slack.IntegrationService" xmlns:ubt="clr-namespace:UiPath.BAF.Telemetry;assembly=UiPath.Slack.IntegrationService" xmlns:uim="clr-namespace:UiPath.IntegrationCore.Models;assembly=UiPath.Slack.IntegrationService" xmlns:uis="clr-namespace:UiPath.IntegrationCore.Services;assembly=UiPath.Slack.IntegrationService" xmlns:usia="clr-namespace:UiPath.Slack.IntegrationService.Activities;assembly=UiPath.Slack.IntegrationService.Activities" xmlns:usic="clr-namespace:UiPath.Slack.IntegrationService.Client;assembly=UiPath.Slack.IntegrationService" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ChannelID" Type="InArgument(x:String)" />
+    <x:Property Name="in_TextMeesage" Type="InArgument(x:String)" />
+    <x:Property Name="Out_TimeStamp" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>684,680</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_01_SendMessage_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="72">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Slack.IntegrationService.Activities</x:String>
+      <x:String>UiPath.BAF.Activities.ContextModel</x:String>
+      <x:String>UiPath.IntegrationCore.Models</x:String>
+      <x:String>UiPath.BAF.Models.Connection.APIConnection</x:String>
+      <x:String>UiPath.BAF.Models.Connection</x:String>
+      <x:String>UiPath.BAF.Telemetry</x:String>
+      <x:String>UiPath.BAF.Models</x:String>
+      <x:String>UiPath.BAF.ServiceInterfaces</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.IntegrationCore.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.BAF.Models.Entity</x:String>
+      <x:String>UiPath.BAF.Models.CrudOperation</x:String>
+      <x:String>UiPath.BAF.Models.Response</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Slack.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.ServiceNow.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.ServiceNow.IntegrationService</AssemblyReference>
+      <AssemblyReference>UiPath.Slack.IntegrationService</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_01_SendMessage" sap:VirtualizedContainerService.HintSize="450.4,537.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <usia:Scope Connection="{x:Null}" ConnectionId="{x:Null}" ExistingConnection="{x:Null}" Connector="uipath-salesforce-slack" DesignConnectionEnabled="False" DisplayName="Slack Scope" sap:VirtualizedContainerService.HintSize="408.8,444.8" sap2010:WorkflowViewState.IdRef="Scope_1" TelemetryEnabled="False" ThrowExceptionOnError="True" UseConnectionService="True">
+      <usia:Scope.Body>
+        <ActivityAction x:TypeArguments="usia:SlackScopeActivityContext">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="usia:SlackScopeActivityContext" Name="ScopeActivityContext" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,333.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="OutTime" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <usia:SendMessage BusinessEntityName="{x:Null}" ConnectionId="{x:Null}" IsAdditionalPropertiesActive="{x:Null}" Status="{x:Null}" ConfiguredBusinessEntity="Conversations_chat" Connector="uipath-salesforce-slack" CrudOperation="Create" DesignConnectionEnabled="True" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="333.6,240.8" sap2010:WorkflowViewState.IdRef="SendMessage_1" UseConnectionService="True">
+              <usia:SendMessage.BusinessEntity>
+                <ubme:BusinessEntity AuthFields="{x:Null}" Connection="{x:Null}" Id="{x:Null}" Metadata="{x:Reference __ReferenceID0}" SearchableFields="{x:Null}" SearchableJoins="{x:Null}" Name="conversations_chat">
+                  <ubme:BusinessEntity.AllFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID1" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The id of the Conversation (Channel)" DisplayName="Channel ID" FieldName="conversationId" FormDataType="ExpressionTextBox" InArgumentValue="[in_ChannelID]" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">[in_ChannelID]</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <uim:OperationEntityField x:TypeArguments="usic:Conversations_chat" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="usic:Conversations_chat" DataType="Conversations_chat" Description="The Conversations_chat object." DisplayName="Conversations_chat (Input)" FieldName="body" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False" />
+                      <uim:OperationEntityField x:TypeArguments="usic:Conversations_chat" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="Out" ArgumentType="usic:Conversations_chat" DataType="Conversations_chat" Description="The Conversations_chat object returned." DisplayName="Conversations_chat (Output)" FieldName="Response" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                    </scg:List>
+                  </ubme:BusinessEntity.AllFields>
+                  <ubme:BusinessEntity.EntityMetadata>
+                    <ubme:EntityMetadata Description="{x:Null}" Section="{x:Null}" Category="conversations" DisplayName="Conversations Chat" EligibleOperations="1" IsCustomEntity="False" Name="conversations_chat">
+                      <ubme:EntityMetadata.Metadata>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID0">
+                          <x:String x:Key="Object">Conversations_chat</x:String>
+                          <x:String x:Key="Client">UiPath.Slack.IntegrationService.Client.Conversations_chatAPIClient</x:String>
+                          <x:String x:Key="Operation">CreateConversations_chat</x:String>
+                          <x:String x:Key="Path">/conversations_chat</x:String>
+                        </scg:Dictionary>
+                      </ubme:EntityMetadata.Metadata>
+                    </ubme:EntityMetadata>
+                  </ubme:BusinessEntity.EntityMetadata>
+                  <ubme:BusinessEntity.SelectedFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                      <x:Reference>__ReferenceID1</x:Reference>
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID2" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The text of the message" DisplayName="Text" FieldName="body.Text" FormDataType="ExpressionTextBox" InArgumentValue="[in_TextMeesage]" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">[in_TextMeesage]</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID3" ArgumentDirection="Out" ArgumentType="x:String" DataType="String" Description="The unique id of the conversation" DisplayName="Conversation Timestamp" FieldName="Response.Ts" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                    </scg:List>
+                  </ubme:BusinessEntity.SelectedFields>
+                  <ubme:BusinessEntity.TelemetryProperties>
+                    <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                  </ubme:BusinessEntity.TelemetryProperties>
+                </ubme:BusinessEntity>
+              </usia:SendMessage.BusinessEntity>
+              <usia:SendMessage.ClientInfo>
+                <uim:ClientInfo x:Name="__ReferenceID4" ClientAssembly="UiPath.Slack.IntegrationService" ClientNamespace="UiPath.Slack.IntegrationService" />
+              </usia:SendMessage.ClientInfo>
+              <usia:SendMessage.DesignConnectionRequest>
+                <uim:ConnectionParams ClientInfo="{x:Reference __ReferenceID4}" ConnectionId="{x:Null}" ConnectionName="{x:Null}" TelemetryClient="{x:Null}" AuthType="ElementInstance">
+                  <uim:ConnectionParams.TelemetryInfo>
+                    <uim:TelemetryInfo RobotId="{x:Null}" RobotRequestId="{x:Null}" SelectedEntity="{x:Null}" WorkflowInstanceId="{x:Null}" ActivityPack="UiPath.Slack.IntegrationService.Activities" ActivityPackVersion="3.5.3" Source="studio" />
+                  </uim:ConnectionParams.TelemetryInfo>
+                </uim:ConnectionParams>
+              </usia:SendMessage.DesignConnectionRequest>
+              <usia:SendMessage.SelectedFields>
+                <scg:List x:TypeArguments="ubme:EntityField" Capacity="3">
+                  <x:Reference>__ReferenceID1</x:Reference>
+                  <x:Reference>__ReferenceID2</x:Reference>
+                  <x:Reference>__ReferenceID3</x:Reference>
+                </scg:List>
+              </usia:SendMessage.SelectedFields>
+              <usia:SendMessage.ServiceFactory>
+                <uis:ServiceFactory BusinessEntityService="{x:Null}" QueryService="{x:Null}">
+                  <uis:ServiceFactory.BusinessEntityExecuteService>
+                    <uis:BusinessEntityExecuteService />
+                  </uis:ServiceFactory.BusinessEntityExecuteService>
+                  <uis:ServiceFactory.ConnectionService>
+                    <uis:ConnectionService />
+                  </uis:ServiceFactory.ConnectionService>
+                  <uis:ServiceFactory.FileService>
+                    <uis:FileExecutionService />
+                  </uis:ServiceFactory.FileService>
+                  <uis:ServiceFactory.ListService>
+                    <uis:ListService />
+                  </uis:ServiceFactory.ListService>
+                  <uis:ServiceFactory.MetadataService>
+                    <uis:MetadataService />
+                  </uis:ServiceFactory.MetadataService>
+                  <uis:ServiceFactory.SampleDataService>
+                    <uis:SampleDataService />
+                  </uis:ServiceFactory.SampleDataService>
+                </uis:ServiceFactory>
+              </usia:SendMessage.ServiceFactory>
+              <usia:SendMessage.TelemetryProperties>
+                <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+              </usia:SendMessage.TelemetryProperties>
+            </usia:SendMessage>
+          </Sequence>
+        </ActivityAction>
+      </usia:Scope.Body>
+      <usia:Scope.ClientInfo>
+        <uim:ClientInfo x:Name="__ReferenceID5" ClientAssembly="UiPath.Slack.IntegrationService" ClientNamespace="UiPath.Slack.IntegrationService" />
+      </usia:Scope.ClientInfo>
+      <usia:Scope.DesignConnectionRequest>
+        <uim:ConnectionParams ClientInfo="{x:Reference __ReferenceID5}" TelemetryClient="{x:Null}" TelemetryInfo="{x:Null}" AuthType="ElementInstance" ConnectionId="4ae69fa6-e2bc-ec11-997e-dc9840832b52" ConnectionName="prasadsatish@outlook.com" />
+      </usia:Scope.DesignConnectionRequest>
+      <usia:Scope.ServiceFactory>
+        <uis:ServiceFactory BusinessEntityService="{x:Null}" QueryService="{x:Null}">
+          <uis:ServiceFactory.BusinessEntityExecuteService>
+            <uis:BusinessEntityExecuteService />
+          </uis:ServiceFactory.BusinessEntityExecuteService>
+          <uis:ServiceFactory.ConnectionService>
+            <uis:ConnectionService />
+          </uis:ServiceFactory.ConnectionService>
+          <uis:ServiceFactory.FileService>
+            <uis:FileExecutionService />
+          </uis:ServiceFactory.FileService>
+          <uis:ServiceFactory.ListService>
+            <uis:ListService />
+          </uis:ServiceFactory.ListService>
+          <uis:ServiceFactory.MetadataService>
+            <uis:MetadataService />
+          </uis:ServiceFactory.MetadataService>
+          <uis:ServiceFactory.SampleDataService>
+            <uis:SampleDataService />
+          </uis:ServiceFactory.SampleDataService>
+        </uis:ServiceFactory>
+      </usia:Scope.ServiceFactory>
+      <usia:Scope.TelemetryProperties>
+        <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+      </usia:Scope.TelemetryProperties>
+    </usia:Scope>
+  </Sequence>
+</Activity>
