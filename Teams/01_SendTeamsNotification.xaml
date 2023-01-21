@@ -1,0 +1,1399 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_01_SendTeamsNotification" this:_01_SendTeamsNotification.in_Message="Test form Teams" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:uibi="http://schemas.uipath.com/workflow/infrastructure/baf/uibi" xmlns:uiisi="http://schemas.uipath.com/workflow/infrastructure/is/uiisi" xmlns:umia="clr-namespace:UiPath.MicrosoftTeams.IntegrationService.Activities;assembly=UiPath.MicrosoftTeams.IntegrationService.Activities" xmlns:umic="clr-namespace:UiPath.MicrosoftTeams.IntegrationService.Client;assembly=UiPath.MicrosoftTeams.IntegrationService" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Message" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>800.8,927.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_01_SendTeamsNotification_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="74">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.IntegrationService.Infrastructure.CEQL</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Entity</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Enums</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Telemetry</x:String>
+      <x:String>UiPath.BAF.Infrastructure</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Connection</x:String>
+      <x:String>UiPath.MicrosoftTeams.IntegrationService.Activities</x:String>
+      <x:String>UiPath.IntegrationCore.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>UiPath.MicrosoftTeams.Activities.Teams</x:String>
+      <x:String>UiPath.MicrosoftTeams.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.MicrosoftTeams.IntegrationService.Client</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.BAF.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftTeams.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.ServiceNow.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Slack.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Beta</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftTeams.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftTeams.IntegrationService</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_01_SendTeamsNotification" sap:VirtualizedContainerService.HintSize="476.8,862.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <umia:Scope ConnectionId="c5071425-4499-ed11-bf7a-501ac56bb554" Connector="uipath-microsoft-teams" DesignConnectionEnabled="True" DisplayName="Microsoft Teams Scope" sap:VirtualizedContainerService.HintSize="433.6,772.8" sap2010:WorkflowViewState.IdRef="Scope_1" TelemetryEnabled="False" ThrowExceptionOnError="True" UseConnectionService="True">
+      <umia:Scope.Body>
+        <ActivityAction x:TypeArguments="uibi:IScopeActivityContext">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="uibi:IScopeActivityContext" Name="ScopeActivityContext" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,337.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="umic:Teams_channels[]" Name="GetChannelID" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <umia:ListChannels ConfiguredBusinessEntity="teams::channels" Connector="uipath-microsoft-teams" CrudOperation="Search" DesignConnectionEnabled="True" DisplayName="List Channels" sap:VirtualizedContainerService.HintSize="356.8,52.8" sap2010:WorkflowViewState.IdRef="ListChannels_1" UseConnectionService="True" UseRawCEQL="False">
+              <umia:ListChannels.BusinessEntity>
+                <uibi:BusinessEntity Name="teams::channels">
+                  <uibi:BusinessEntity.AllFields>
+                    <scg:List x:TypeArguments="uibi:EntityField" Capacity="8">
+                      <x:Reference>__ReferenceID0</x:Reference>
+                      <x:Reference>__ReferenceID1</x:Reference>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                      <x:Reference>__ReferenceID3</x:Reference>
+                      <x:Reference>__ReferenceID4</x:Reference>
+                    </scg:List>
+                  </uibi:BusinessEntity.AllFields>
+                  <uibi:BusinessEntity.EntityMetadata>
+                    <uibi:EntityMetadata Metadata="{x:Reference __ReferenceID5}" DisplayName="Teams channels" EligibleOperations="64" IsCustomEntity="False" Name="teams::channels" />
+                  </uibi:BusinessEntity.EntityMetadata>
+                  <uibi:BusinessEntity.Metadata>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID5">
+                      <x:String x:Key="Object">teams::channels</x:String>
+                      <x:String x:Key="Client">UiPath.MicrosoftTeams.IntegrationService.Client.Teams__channelsAPIClient</x:String>
+                      <x:String x:Key="Operation">GetTeamsChannels</x:String>
+                      <x:String x:Key="Path">/teams/{team-id}/channels</x:String>
+                    </scg:Dictionary>
+                  </uibi:BusinessEntity.Metadata>
+                  <uibi:BusinessEntity.SearchableFields>
+                    <scg:List x:TypeArguments="uibi:SearchableField" Capacity="4">
+                      <uibi:SearchableField Mask="{x:Null}" DisplayName="Display name" InputType="x:String" Name="displayName" QueryType="x:String">
+                        <uibi:SearchableField.SearchableOperators>
+                          <scg:List x:TypeArguments="x:String" Capacity="1">
+                            <x:String>=</x:String>
+                          </scg:List>
+                        </uibi:SearchableField.SearchableOperators>
+                      </uibi:SearchableField>
+                    </scg:List>
+                  </uibi:BusinessEntity.SearchableFields>
+                  <uibi:BusinessEntity.SearchableJoins>
+                    <scg:List x:TypeArguments="x:String" Capacity="4">
+                      <x:String>AND</x:String>
+                    </scg:List>
+                  </uibi:BusinessEntity.SearchableJoins>
+                  <uibi:BusinessEntity.SelectedFields>
+                    <scg:List x:TypeArguments="uibi:EntityField" Capacity="8">
+                      <x:Reference>__ReferenceID0</x:Reference>
+                      <x:Reference>__ReferenceID1</x:Reference>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                      <x:Reference>__ReferenceID3</x:Reference>
+                      <x:Reference>__ReferenceID4</x:Reference>
+                    </scg:List>
+                  </uibi:BusinessEntity.SelectedFields>
+                  <uibi:BusinessEntity.TelemetryProperties>
+                    <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                  </uibi:BusinessEntity.TelemetryProperties>
+                </uibi:BusinessEntity>
+              </umia:ListChannels.BusinessEntity>
+              <umia:ListChannels.DesignConnectionRequest>
+                <uiisi:ConnectionParameters AuthType="ElementInstance">
+                  <uiisi:ConnectionParameters.ClientInfo>
+                    <uiisi:ClientInfo ClientAssembly="UiPath.MicrosoftTeams.IntegrationService" ClientNamespace="UiPath.MicrosoftTeams.IntegrationService">
+                      <uiisi:ClientInfo.ConnectorMetadata>
+                        <uiisi:ConnectorMetadata Name="{x:Null}" x:Name="__ReferenceID14" HasDiscoveryAPI="False" Key="uipath-microsoft-teams" Version="1.0.12">
+                          <uiisi:ConnectorMetadata.ActivitiesSettings>
+                            <scg:Dictionary x:TypeArguments="x:String, uiisi:ActivitySettings">
+                              <uiisi:ActivitySettings x:Key="ListChannels" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="CreateChannel" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The id of the team" DisplayName="Team ID" FieldName="team_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The display name of the new channel." DisplayName="Display name" FieldName="body.displayName" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The description of the channel." DisplayName="Description" FieldName="body.description" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The channel type." DisplayName="MembershipType" FieldName="body.membershipType" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="ID of the new channel" DisplayName="Channel ID" FieldName="Response.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="InviteChannelMember" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The id of the team" DisplayName="Team ID" FieldName="team_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The id of a channel in team." DisplayName="Channel ID" FieldName="channel_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Email or ID of the user." DisplayName="User Email" FieldName="body.userId" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Role of the user (Possible Values are guest, owner)" DisplayName="Roles" FieldName="body.roles" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="ID of the new member in the channel." DisplayName="Channel member ID" FieldName="Response.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="CreateOneOnOneChat" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The user email or ID of the second user." DisplayName="User email" FieldName="body.userEmail" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The role of the second user (Possible Values are guest, owner)" DisplayName="Roles" FieldName="body.roles" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="ID of the new Chat." DisplayName="Chat ID" FieldName="Response.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="SendChatMessage" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The id of the Chat" DisplayName="Chat ID" FieldName="chat_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The plain text message." DisplayName="Content" FieldName="bodyFormData.body.content" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the ID of the sharepoint asset." DisplayName="Attachment ID" FieldName="bodyFormData.attachments.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the sharepoint or drive item's url." DisplayName="Content url" FieldName="bodyFormData.attachments.contentUrl" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the name of the sharepoint asset." DisplayName="Attachment resource name" FieldName="bodyFormData.attachments.name" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Chat message." DisplayName="Message" FieldName="Response" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="SendChannelMessage" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The id of the team" DisplayName="Team ID" FieldName="team_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The id of a channel in team." DisplayName="Channel ID" FieldName="channel_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The plain text message." DisplayName="Content" FieldName="bodyFormData.body.content" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the ID of the sharepoint asset." DisplayName="Attachment ID" FieldName="bodyFormData.attachments.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the sharepoint or drive item's url." DisplayName="Content url" FieldName="bodyFormData.attachments.contentUrl" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the name of the sharepoint asset." DisplayName="Attachment resource name" FieldName="bodyFormData.attachments.name" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Channel message." DisplayName="Message" FieldName="Response" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="ReplyToChannelMessage" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The id of the team" DisplayName="Team ID" FieldName="team_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The id of a channel in team." DisplayName="Channel ID" FieldName="channel_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The id of a channel message in the team." DisplayName="Message ID" FieldName="message_id" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The plain text message." DisplayName="Content" FieldName="bodyFormData.body.content" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the ID of the sharepoint asset." DisplayName="Attachment ID" FieldName="bodyFormData.attachments.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the sharepoint or drive item's url." DisplayName="Content url" FieldName="bodyFormData.attachments.contentUrl" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Optionally required if you are uploading sharepoint content, the name of the sharepoint asset." DisplayName="Attachment resource name" FieldName="bodyFormData.attachments.name" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Channel message." DisplayName="Message" FieldName="Response" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="GetRecord" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="InsertRecord" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="UpdateRecord" EnableSampleValues="False" EnableSampleValuesTest="False" HideManageProperties="True" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                            </scg:Dictionary>
+                          </uiisi:ConnectorMetadata.ActivitiesSettings>
+                          <uiisi:ConnectorMetadata.GeneratedObjectMetadata>
+                            <scg:List x:TypeArguments="uiisi:ObjectMetadata" Capacity="32">
+                              <uiisi:ObjectMetadata DisplayName="Teams channels" Name="teams::channels" Path="/teams/{team-id}/channels" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeamsChannels">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createTeamChannel">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateTeamsChannelByChannelsId">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteTeamsChannelByChannelsId">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getTeamsChannelByChannelsId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeamsChannels">/teams/{team-id}/channels</x:String>
+                                    <x:String x:Key="createTeamChannel">/teams/{team-id}/channels</x:String>
+                                    <x:String x:Key="updateTeamsChannelByChannelsId">/teams/{team-id}/channels/{channelsId}</x:String>
+                                    <x:String x:Key="deleteTeamsChannelByChannelsId">/teams/{team-id}/channels/{channelsId}</x:String>
+                                    <x:String x:Key="getTeamsChannelByChannelsId">/teams/{team-id}/channels/{channelsId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Teams channels messages" Name="teams::channels::messages" Path="/teams/{team-id}/channels/{channel-id}/messages" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeamsChannelsMessages">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createTeamChannelMessage">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeamsChannelsMessages">/teams/{team-id}/channels/{channel-id}/messages</x:String>
+                                    <x:String x:Key="createTeamChannelMessage">/teams/{team-id}/channels/{channel-id}/messages</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Groups events" Name="groups::events" Path="/groups/{group-id}/events" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getGroupsEvents">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createGroupEvent">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateGroupsEventByEventsId">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteGroupsEventByEventsId">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getGroupsEventByEventsId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getGroupsEvents">/groups/{group-id}/events</x:String>
+                                    <x:String x:Key="createGroupEvent">/groups/{group-id}/events</x:String>
+                                    <x:String x:Key="updateGroupsEventByEventsId">/groups/{group-id}/events/{eventsId}</x:String>
+                                    <x:String x:Key="deleteGroupsEventByEventsId">/groups/{group-id}/events/{eventsId}</x:String>
+                                    <x:String x:Key="getGroupsEventByEventsId">/groups/{group-id}/events/{eventsId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Teams async operation" Name="teamsAsyncOperation" Path="/teamsAsyncOperation" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeamsAsyncOperation">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeamsAsyncOperation">/teamsAsyncOperation</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="Id" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Groups team" Name="groups::team" Path="/groups/{id}/team" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createGroupTeam">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createGroupTeam">/groups/{id}/team</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Chats" Name="chats" Path="/chats" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getChats">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createChat">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getChatByChatsId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getChats">/chats</x:String>
+                                    <x:String x:Key="createChat">/chats</x:String>
+                                    <x:String x:Key="getChatByChatsId">/chats/{chatsId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="One on one chat" Name="one-on-one-chat" Path="/one-on-one-chat" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createOneOnOneChat">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createOneOnOneChat">/one-on-one-chat</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="Id" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Teams channels messages delta" Name="teams::channels::messages-delta" Path="/teams/{team-id}/channels/{channel-id}/messages-delta" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeamsChannelsMessagesDelta">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeamsChannelsMessagesDelta">/teams/{team-id}/channels/{channel-id}/messages-delta</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Me" Name="me" Path="/me" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getMe">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getMe">/me</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Teams" Name="teams" Path="/teams" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeams">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createTeam">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateTeamByTeamsId">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteTeamByTeamsId">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getTeamByTeamsId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeams">/teams</x:String>
+                                    <x:String x:Key="createTeam">/teams</x:String>
+                                    <x:String x:Key="updateTeamByTeamsId">/teams/{teamsId}</x:String>
+                                    <x:String x:Key="deleteTeamByTeamsId">/teams/{teamsId}</x:String>
+                                    <x:String x:Key="getTeamByTeamsId">/teams/{teamsId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Normalised teams channels messages" Name="normalised-teams::channels::messages" Path="/normalised-teams/{team-id}/channels/{channel-id}/messages" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createNormalisedTeamChannelMessage">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createNormalisedTeamChannelMessage">/normalised-teams/{team-id}/channels/{channel-id}/messages</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Teams channels messages replies" Name="teams::channels::messages::replies" Path="/teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeamsChannelsMessagesReplies">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createTeamChannelMessageReply">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeamsChannelsMessagesReplies">/teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</x:String>
+                                    <x:String x:Key="createTeamChannelMessageReply">/teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Normalised chats messages" Name="normalised-chats::messages" Path="/normalised-chats/{chat-id}/messages" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createNormalisedChatMessage">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createNormalisedChatMessage">/normalised-chats/{chat-id}/messages</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Me joined teams" Name="me-joinedTeams" Path="/me-joinedTeams" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getMeJoinedTeams">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getMeJoinedTeams">/me-joinedTeams</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Chats members" Name="chats::members" Path="/chats/{chat-id}/members" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getChatsMembers">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createChatMember">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteChatsMemberByMembersId">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getChatsMemberByMembersId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getChatsMembers">/chats/{chat-id}/members</x:String>
+                                    <x:String x:Key="createChatMember">/chats/{chat-id}/members</x:String>
+                                    <x:String x:Key="deleteChatsMemberByMembersId">/chats/{chat-id}/members/{membersId}</x:String>
+                                    <x:String x:Key="getChatsMemberByMembersId">/chats/{chat-id}/members/{membersId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Chats messages" Name="chats::messages" Path="/chats/{chat-id}/messages" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getChatsMessages">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createChatMessage">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getChatsMessageByMessagesId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getChatsMessages">/chats/{chat-id}/messages</x:String>
+                                    <x:String x:Key="createChatMessage">/chats/{chat-id}/messages</x:String>
+                                    <x:String x:Key="getChatsMessageByMessagesId">/chats/{chat-id}/messages/{messagesId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Teams members" Name="teams::members" Path="/teams/{team-id}/members" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeamsMembers">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createTeamMember">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateTeamsMemberByMembersId">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteTeamsMemberByMembersId">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getTeamsMemberByMembersId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeamsMembers">/teams/{team-id}/members</x:String>
+                                    <x:String x:Key="createTeamMember">/teams/{team-id}/members</x:String>
+                                    <x:String x:Key="updateTeamsMemberByMembersId">/teams/{team-id}/members/{membersId}</x:String>
+                                    <x:String x:Key="deleteTeamsMemberByMembersId">/teams/{team-id}/members/{membersId}</x:String>
+                                    <x:String x:Key="getTeamsMemberByMembersId">/teams/{team-id}/members/{membersId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Teams channels members" Name="teams::channels::members" Path="/teams/{team-id}/channels/{channel-id}/members" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getTeamsChannelsMembers">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createTeamChannelMember">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteTeamsChannelsMemberByMembersId">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getTeamsChannelsMemberByMembersId">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getTeamsChannelsMembers">/teams/{team-id}/channels/{channel-id}/members</x:String>
+                                    <x:String x:Key="createTeamChannelMember">/teams/{team-id}/channels/{channel-id}/members</x:String>
+                                    <x:String x:Key="deleteTeamsChannelsMemberByMembersId">/teams/{team-id}/channels/{channel-id}/members/{membersId}</x:String>
+                                    <x:String x:Key="getTeamsChannelsMemberByMembersId">/teams/{team-id}/channels/{channel-id}/members/{membersId}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Normalised teams channels messages replies" Name="normalised-teams::channels::messages::replies" Path="/normalised-teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createNormalisedTeamChannelMessageReply">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createNormalisedTeamChannelMessageReply">/normalised-teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                            </scg:List>
+                          </uiisi:ConnectorMetadata.GeneratedObjectMetadata>
+                          <uiisi:ConnectorMetadata.Lookups>
+                            <scg:List x:TypeArguments="uiisi:Lookup" Capacity="4">
+                              <uiisi:Lookup DisplayName="Get teams" LoadByDefault="True" MultiSelect="False" Name="GetTeams" OutputArgument="id" Resource="teams">
+                                <uiisi:Lookup.ActivityBindings>
+                                  <scg:List x:TypeArguments="uiisi:ActivityBinding" Capacity="8">
+                                    <uiisi:ActivityBinding ActivityNames="ListChannels" FieldName="teams::channels.team-id" />
+                                    <uiisi:ActivityBinding ActivityNames="CreateChannel" FieldName="teams::channels.team_id" />
+                                    <uiisi:ActivityBinding ActivityNames="InviteChannelMember" FieldName="teams::channels::members.team_id" />
+                                    <uiisi:ActivityBinding ActivityNames="SendChannelMessage" FieldName="normalised-teams::channels::messages.team_id" />
+                                    <uiisi:ActivityBinding ActivityNames="ReplyToChannelMessage" FieldName="normalised-teams::channels::messages::replies.team_id" />
+                                  </scg:List>
+                                </uiisi:Lookup.ActivityBindings>
+                                <uiisi:Lookup.DisplayProperties>
+                                  <scg:List x:TypeArguments="uiisi:LookupDisplayProperty" Capacity="4">
+                                    <uiisi:LookupDisplayProperty DisplayName="Team ID" Name="id" />
+                                    <uiisi:LookupDisplayProperty DisplayName="Team display name" Name="displayName" />
+                                  </scg:List>
+                                </uiisi:Lookup.DisplayProperties>
+                              </uiisi:Lookup>
+                              <uiisi:Lookup DisplayName="Get chats" LoadByDefault="True" MultiSelect="False" Name="GetChats" OutputArgument="id" Resource="chats">
+                                <uiisi:Lookup.ActivityBindings>
+                                  <scg:List x:TypeArguments="uiisi:ActivityBinding" Capacity="4">
+                                    <uiisi:ActivityBinding ActivityNames="SendChatMessage" FieldName="normalised-chats::messages.chat_id" />
+                                  </scg:List>
+                                </uiisi:Lookup.ActivityBindings>
+                                <uiisi:Lookup.DisplayProperties>
+                                  <scg:List x:TypeArguments="uiisi:LookupDisplayProperty" Capacity="4">
+                                    <uiisi:LookupDisplayProperty DisplayName="Chat ID" Name="id" />
+                                    <uiisi:LookupDisplayProperty DisplayName="Chat type" Name="chatType" />
+                                    <uiisi:LookupDisplayProperty DisplayName="Topic" Name="topic" />
+                                  </scg:List>
+                                </uiisi:Lookup.DisplayProperties>
+                              </uiisi:Lookup>
+                            </scg:List>
+                          </uiisi:ConnectorMetadata.Lookups>
+                          <uiisi:ConnectorMetadata.ParametersToExclude>
+                            <scg:List x:TypeArguments="x:String" Capacity="4">
+                              <x:String>Authorization</x:String>
+                            </scg:List>
+                          </uiisi:ConnectorMetadata.ParametersToExclude>
+                          <uiisi:ConnectorMetadata.RequiredFields>
+                            <scg:Dictionary x:TypeArguments="x:String, scg:List(x:String)">
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels: getteamschannels" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels: createteamchannel" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels: getteamschannelbychannelsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channelsid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels: deleteteamschannelbychannelsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channelsid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels: updateteamschannelbychannelsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channelsid</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__messages: getteamschannelsmessages" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__messages: createteamchannelmessage" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="groups__events: getgroupsevents" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>group_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="groups__events: creategroupevent" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>group_id</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="groups__events: getgroupseventbyeventsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>group_id</x:String>
+                                <x:String>eventsid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="groups__events: deletegroupseventbyeventsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>group_id</x:String>
+                                <x:String>eventsid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="groups__events: updategroupseventbyeventsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>group_id</x:String>
+                                <x:String>eventsid</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teamsasyncoperation: getteamsasyncoperation" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>url</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="groups__team: creategroupteam" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>id</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats: getchats" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats: createchat" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats: getchatbychatsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chatsid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="oneononechat: createoneononechat" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__messagesdelta: getteamschannelsmessagesdelta" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="me: getme" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams: getteams" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams: createteam" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams: getteambyteamsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>teamsid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams: deleteteambyteamsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>teamsid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams: updateteambyteamsid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>teamsid</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="normalisedteams__channels__messages: createnormalisedteamchannelmessage" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__messages__replies: getteamschannelsmessagesreplies" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                                <x:String>message_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__messages__replies: createteamchannelmessagereply" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                                <x:String>message_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="normalisedchats__messages: createnormalisedchatmessage" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="mejoinedteams: getmejoinedteams" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats__members: getchatsmembers" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats__members: createchatmember" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats__members: getchatsmemberbymembersid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                                <x:String>membersid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats__members: deletechatsmemberbymembersid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                                <x:String>membersid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats__messages: getchatsmessages" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats__messages: createchatmessage" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="chats__messages: getchatsmessagebymessagesid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>chat_id</x:String>
+                                <x:String>messagesid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__members: getteamsmembers" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__members: createteammember" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__members: getteamsmemberbymembersid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>membersid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__members: deleteteamsmemberbymembersid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>membersid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__members: updateteamsmemberbymembersid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>membersid</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__members: getteamschannelsmembers" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__members: createteamchannelmember" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__members: getteamschannelsmemberbymembersid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                                <x:String>membersid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="teams__channels__members: deleteteamschannelsmemberbymembersid" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                                <x:String>membersid</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="normalisedteams__channels__messages__replies: createnormalisedteamchannelmessagereply" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>team_id</x:String>
+                                <x:String>channel_id</x:String>
+                                <x:String>message_id</x:String>
+                              </scg:List>
+                            </scg:Dictionary>
+                          </uiisi:ConnectorMetadata.RequiredFields>
+                        </uiisi:ConnectorMetadata>
+                      </uiisi:ClientInfo.ConnectorMetadata>
+                    </uiisi:ClientInfo>
+                  </uiisi:ConnectionParameters.ClientInfo>
+                  <uiisi:ConnectionParameters.TelemetryInfo>
+                    <uiisi:TelemetryInfo ActivityPack="UiPath.MicrosoftTeams.IntegrationService.Activities" ActivityPackVersion="4.0.4" Source="studio" />
+                  </uiisi:ConnectionParameters.TelemetryInfo>
+                </uiisi:ConnectionParameters>
+              </umia:ListChannels.DesignConnectionRequest>
+              <umia:ListChannels.SelectedFields>
+                <scg:List x:TypeArguments="uibi:EntityField" Capacity="5">
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID0" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The team - id" DisplayName="Team_id" FormDataType="ExpressionTextBox" InArgumentValue="39f1beb9-b922-4b63-abfe-34367212445f" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="team-id" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">39f1beb9-b922-4b63-abfe-34367212445f</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID1" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="Retrieves related resources." DisplayName="Expand" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="expand" ShouldFilterOnChange="False" />
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID2" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="Comma-separated list of properties to include in the response." DisplayName="Select" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="select" ShouldFilterOnChange="False" />
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID3" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The CEQL search expression" DisplayName="Where" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="where" ShouldFilterOnChange="False" />
+                  <uiisi:OperationEntityField x:TypeArguments="umic:Teams_channels[]" x:Name="__ReferenceID4" ArgumentDirection="Out" ArgumentType="umic:Teams_channels[]" DataType="Teams_channels[]" Description="The list of records." DisplayName="List" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="Response" OutArgumentValue="[GetChannelID]" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <OutArgument x:TypeArguments="umic:Teams_channels[]">[GetChannelID]</OutArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                </scg:List>
+              </umia:ListChannels.SelectedFields>
+              <umia:ListChannels.TelemetryProperties>
+                <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+              </umia:ListChannels.TelemetryProperties>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </umia:ListChannels>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="356.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Working With:&quot; + GetChannelID(0).id]" />
+            <umia:SendChannelMessage FilePath="{x:Null}" FileResource="{x:Null}" ConfiguredBusinessEntity="normalised-teams::channels::messages" Connector="uipath-microsoft-teams" CrudOperation="Action" DesignConnectionEnabled="True" DisplayName="Send channel message" sap:VirtualizedContainerService.HintSize="333.6,512.8" sap2010:WorkflowViewState.IdRef="SendChannelMessage_1" UseConnectionService="True">
+              <umia:SendChannelMessage.BusinessEntity>
+                <uibi:BusinessEntity Name="normalised-teams::channels::messages">
+                  <uibi:BusinessEntity.AllFields>
+                    <scg:List x:TypeArguments="uibi:EntityField" Capacity="16">
+                      <x:Reference>__ReferenceID6</x:Reference>
+                      <x:Reference>__ReferenceID7</x:Reference>
+                      <uiisi:OperationEntityField x:TypeArguments="umic:Body2" ArgumentDirection="In" ArgumentType="umic:Body2" DataType="Body2" Description="" DisplayName="BodyFormData" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="True" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="bodyFormData" ShouldFilterOnChange="False" />
+                      <uiisi:OperationEntityField x:TypeArguments="umic:FileParameter" ArgumentDirection="In" ArgumentType="umic:FileParameter" DataType="FileParameter" Description="" DisplayName="File" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="True" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="file" ShouldFilterOnChange="False" />
+                      <x:Reference>__ReferenceID8</x:Reference>
+                      <x:Reference>__ReferenceID9</x:Reference>
+                      <x:Reference>__ReferenceID10</x:Reference>
+                      <x:Reference>__ReferenceID11</x:Reference>
+                      <x:Reference>__ReferenceID12</x:Reference>
+                    </scg:List>
+                  </uibi:BusinessEntity.AllFields>
+                  <uibi:BusinessEntity.EntityMetadata>
+                    <uibi:EntityMetadata Metadata="{x:Reference __ReferenceID13}" DisplayName="Normalised teams channels messages" EligibleOperations="32" IsCustomEntity="False" Name="normalised-teams::channels::messages" />
+                  </uibi:BusinessEntity.EntityMetadata>
+                  <uibi:BusinessEntity.Metadata>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID13">
+                      <x:String x:Key="Object">normalised-teams::channels::messages</x:String>
+                      <x:String x:Key="Client">UiPath.MicrosoftTeams.IntegrationService.Client.NormalisedTeams__channels__messagesAPIClient</x:String>
+                      <x:String x:Key="Operation">CreateNormalisedTeamChannelMessage</x:String>
+                      <x:String x:Key="Path">/normalised-teams/{team-id}/channels/{channel-id}/messages</x:String>
+                    </scg:Dictionary>
+                  </uibi:BusinessEntity.Metadata>
+                  <uibi:BusinessEntity.SelectedFields>
+                    <scg:List x:TypeArguments="uibi:EntityField" Capacity="8">
+                      <x:Reference>__ReferenceID7</x:Reference>
+                      <x:Reference>__ReferenceID6</x:Reference>
+                      <x:Reference>__ReferenceID9</x:Reference>
+                      <x:Reference>__ReferenceID10</x:Reference>
+                      <x:Reference>__ReferenceID11</x:Reference>
+                      <x:Reference>__ReferenceID12</x:Reference>
+                      <x:Reference>__ReferenceID8</x:Reference>
+                    </scg:List>
+                  </uibi:BusinessEntity.SelectedFields>
+                  <uibi:BusinessEntity.TelemetryProperties>
+                    <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                  </uibi:BusinessEntity.TelemetryProperties>
+                </uibi:BusinessEntity>
+              </umia:SendChannelMessage.BusinessEntity>
+              <umia:SendChannelMessage.DesignConnectionRequest>
+                <uiisi:ConnectionParameters AuthType="ElementInstance">
+                  <uiisi:ConnectionParameters.ClientInfo>
+                    <uiisi:ClientInfo ConnectorMetadata="{x:Reference __ReferenceID14}" ClientAssembly="UiPath.MicrosoftTeams.IntegrationService" ClientNamespace="UiPath.MicrosoftTeams.IntegrationService" />
+                  </uiisi:ConnectionParameters.ClientInfo>
+                  <uiisi:ConnectionParameters.TelemetryInfo>
+                    <uiisi:TelemetryInfo ActivityPack="UiPath.MicrosoftTeams.IntegrationService.Activities" ActivityPackVersion="4.0.4" Source="studio" />
+                  </uiisi:ConnectionParameters.TelemetryInfo>
+                </uiisi:ConnectionParameters>
+              </umia:SendChannelMessage.DesignConnectionRequest>
+              <umia:SendChannelMessage.SelectedFields>
+                <scg:List x:TypeArguments="uibi:EntityField" Capacity="7">
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID7" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The id of the team" DisplayName="Team ID" FormDataType="ExpressionTextBox" InArgumentValue="39f1beb9-b922-4b63-abfe-34367212445f" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="team_id" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">39f1beb9-b922-4b63-abfe-34367212445f</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                    <uiisi:OperationEntityField.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPermanentlyHidden">False</x:Boolean>
+                      </scg:Dictionary>
+                    </uiisi:OperationEntityField.Metadata>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID6" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The id of a channel in team." DisplayName="Channel ID" FormDataType="ExpressionTextBox" InArgumentValue="[GetChannelID(0).Id]" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="channel_id" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">[GetChannelID(0).Id]</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                    <uiisi:OperationEntityField.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPermanentlyHidden">False</x:Boolean>
+                      </scg:Dictionary>
+                    </uiisi:OperationEntityField.Metadata>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID9" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The plain text message." DisplayName="Content" FormDataType="ExpressionTextBox" InArgumentValue="[in_Message]" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="bodyFormData.body.content" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">[in_Message]</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                    <uiisi:OperationEntityField.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPermanentlyHidden">False</x:Boolean>
+                      </scg:Dictionary>
+                    </uiisi:OperationEntityField.Metadata>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID10" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="Optionally required if you are uploading sharepoint content, the ID of the sharepoint asset." DisplayName="Attachment ID" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="bodyFormData.attachments.id" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPermanentlyHidden">False</x:Boolean>
+                      </scg:Dictionary>
+                    </uiisi:OperationEntityField.Metadata>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID11" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="Optionally required if you are uploading sharepoint content, the sharepoint or drive item's url." DisplayName="Content url" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="bodyFormData.attachments.contentUrl" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPermanentlyHidden">False</x:Boolean>
+                      </scg:Dictionary>
+                    </uiisi:OperationEntityField.Metadata>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID12" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="Optionally required if you are uploading sharepoint content, the name of the sharepoint asset." DisplayName="Attachment resource name" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="bodyFormData.attachments.name" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPermanentlyHidden">False</x:Boolean>
+                      </scg:Dictionary>
+                    </uiisi:OperationEntityField.Metadata>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="umic:CreateNormalisedTeamChannelMessageResponse" x:Name="__ReferenceID8" ArgumentDirection="Out" ArgumentType="umic:CreateNormalisedTeamChannelMessageResponse" DataType="CreateNormalisedTeamChannelMessageResponse" Description="Channel message." DisplayName="Message" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="Response" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPermanentlyHidden">False</x:Boolean>
+                      </scg:Dictionary>
+                    </uiisi:OperationEntityField.Metadata>
+                  </uiisi:OperationEntityField>
+                </scg:List>
+              </umia:SendChannelMessage.SelectedFields>
+              <umia:SendChannelMessage.TelemetryProperties>
+                <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+              </umia:SendChannelMessage.TelemetryProperties>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </umia:SendChannelMessage>
+          </Sequence>
+        </ActivityAction>
+      </umia:Scope.Body>
+      <umia:Scope.DesignConnectionRequest>
+        <uiisi:ConnectionParameters AuthType="ElementInstance" ConnectionId="c5071425-4499-ed11-bf7a-501ac56bb554" ConnectionName="Satish@rpabotsworld.com" ConnectorKey="uipath-microsoft-teams" ConnectorVersion="1.0.13">
+          <uiisi:ConnectionParameters.ClientInfo>
+            <uiisi:ClientInfo ConnectorMetadata="{x:Reference __ReferenceID14}" ClientAssembly="UiPath.MicrosoftTeams.IntegrationService" ClientNamespace="UiPath.MicrosoftTeams.IntegrationService" />
+          </uiisi:ConnectionParameters.ClientInfo>
+          <uiisi:ConnectionParameters.TelemetryInfo>
+            <uiisi:TelemetryInfo ActivityPack="UiPath.MicrosoftTeams.IntegrationService.Activities" ActivityPackVersion="4.0.4" Source="studio" />
+          </uiisi:ConnectionParameters.TelemetryInfo>
+        </uiisi:ConnectionParameters>
+      </umia:Scope.DesignConnectionRequest>
+      <umia:Scope.TelemetryProperties>
+        <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+      </umia:Scope.TelemetryProperties>
+    </umia:Scope>
+  </Sequence>
+</Activity>

@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1033.6,1381.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>580,1396.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetIncidentInformation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="49">
@@ -88,7 +88,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetIncidentInformation" sap:VirtualizedContainerService.HintSize="487.2,1316.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetIncidentInformation" sap:VirtualizedContainerService.HintSize="590.4,1332" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="Lines" />
       <Variable x:TypeArguments="x:String" Name="out_active" />
@@ -108,23 +108,23 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="445.6,1224" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="547.2,1242.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <usia:Scope ConnectionId="993b37ba-3e01-ed11-b47a-501ac56bcbc8" Connector="uipath-servicenow-servicenow" DesignConnectionEnabled="True" DisplayName="ServiceNow Scope" sap:VirtualizedContainerService.HintSize="408.8,992.8" sap2010:WorkflowViewState.IdRef="Scope_1" TelemetryEnabled="False" ThrowExceptionOnError="True" UseConnectionService="True">
+        <usia:Scope ConnectionId="da6eb665-3b99-ed11-bf7a-501ac56bb554" Connector="uipath-servicenow-servicenow" DesignConnectionEnabled="True" DisplayName="ServiceNow Scope" sap:VirtualizedContainerService.HintSize="510.4,1011.2" sap2010:WorkflowViewState.IdRef="Scope_1" TelemetryEnabled="False" ThrowExceptionOnError="True" UseConnectionService="True">
           <usia:Scope.Body>
             <ActivityAction x:TypeArguments="uibi:IScopeActivityContext">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="uibi:IScopeActivityContext" Name="ScopeActivityContext" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,881.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476.8,900" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <usia:GetRecord BusinessEntityName="incident" ConfiguredBusinessEntity="" Connector="uipath-servicenow-servicenow" CrudOperation="Get" DesignConnectionEnabled="True" DisplayName="Get Record" sap:VirtualizedContainerService.HintSize="333.6,95.2" sap2010:WorkflowViewState.IdRef="GetRecord_1" UseConnectionService="True">
+                <usia:GetRecord BusinessEntityName="incident" ConfiguredBusinessEntity="" Connector="uipath-servicenow-servicenow" CrudOperation="Get" DesignConnectionEnabled="True" DisplayName="Get Record" sap:VirtualizedContainerService.HintSize="433.6,95.2" sap2010:WorkflowViewState.IdRef="GetRecord_1" UseConnectionService="True">
                   <usia:GetRecord.BusinessEntity>
-                    <uibi:BusinessEntity Name="incident">
+                    <uibi:BusinessEntity Metadata="{x:Reference __ReferenceID0}" Name="incident">
                       <uibi:BusinessEntity.AllFields>
                         <scg:List x:TypeArguments="uibi:EntityField" Capacity="118">
                           <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID1" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The incident id" DisplayName="IncidentId" FormDataType="ExpressionTextBox" InArgumentValue="[in_SysID]" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="True" IsMandatory="True" IsSelected="False" Location="Path" Name="incidentId" SampleValue="" ShouldFilterOnChange="False">
@@ -296,15 +296,16 @@
                         </scg:List>
                       </uibi:BusinessEntity.AllFields>
                       <uibi:BusinessEntity.EntityMetadata>
-                        <uibi:EntityMetadata Metadata="{x:Reference __ReferenceID0}" DisplayName="Incident" EligibleOperations="2" IsCustomEntity="False" Name="incident" />
+                        <uibi:EntityMetadata DisplayName="Incident" EligibleOperations="2" IsCustomEntity="False" Name="incident">
+                          <uibi:EntityMetadata.Metadata>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID0">
+                              <x:String x:Key="Object">incident</x:String>
+                              <x:String x:Key="Path">/incident</x:String>
+                              <x:String x:Key="Method">GET</x:String>
+                            </scg:Dictionary>
+                          </uibi:EntityMetadata.Metadata>
+                        </uibi:EntityMetadata>
                       </uibi:BusinessEntity.EntityMetadata>
-                      <uibi:BusinessEntity.Metadata>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID0">
-                          <x:String x:Key="Object">incident</x:String>
-                          <x:String x:Key="Path">/incident</x:String>
-                          <x:String x:Key="Method">GET</x:String>
-                        </scg:Dictionary>
-                      </uibi:BusinessEntity.Metadata>
                       <uibi:BusinessEntity.SelectedFields>
                         <scg:List x:TypeArguments="uibi:EntityField" Capacity="12">
                           <x:Reference>__ReferenceID1</x:Reference>
@@ -331,7 +332,7 @@
                       <uiisi:ConnectionParameters.ClientInfo>
                         <uiisi:ClientInfo ClientAssembly="UiPath.ServiceNow.IntegrationService" ClientNamespace="UiPath.ServiceNow.IntegrationService">
                           <uiisi:ClientInfo.ConnectorMetadata>
-                            <uiisi:ConnectorMetadata Lookups="{x:Null}" x:Name="__ReferenceID13" HasDiscoveryAPI="True" Key="uipath-servicenow-servicenow" Version="1.0.30">
+                            <uiisi:ConnectorMetadata Lookups="{x:Null}" HasDiscoveryAPI="True" Key="uipath-servicenow-servicenow" Version="1.0.30">
                               <uiisi:ConnectorMetadata.ActivitiesSettings>
                                 <scg:Dictionary x:TypeArguments="x:String, uiisi:ActivitySettings">
                                   <uiisi:ActivitySettings x:Key="GetRecord" EnableSampleValues="True" EnableSampleValuesTest="False" ShowAllFields="False" ShowConfigureButton="True">
@@ -420,8 +421,8 @@
                     <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
                   </usia:GetRecord.TelemetryProperties>
                 </usia:GetRecord>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Incident :&quot;+ out_incident_number.ToString+ &quot;-&gt;: &quot; +out_short_desc.ToString + &quot; Obtained..&quot;]" />
-                <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Incident :&quot;+ out_incident_number.ToString+ &quot;-&gt;: &quot; +out_short_desc.ToString + &quot; Obtained..&quot;]" />
+                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:String[]">[Lines]</OutArgument>
                   </Assign.To>
@@ -429,16 +430,80 @@
                     <InArgument x:TypeArguments="s:String[]">[out_description.Split(Environment.NewLine.ToArray,StringSplitOptions.RemoveEmptyEntries)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[System.Text.RegularExpressions.Regex.Split(Lines(0).ToString, &quot;\s*:\s*”)(1)]" />
-                <ui:BuildDataTable DataTable="[dt_out_IncidentData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;WIID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IncidentID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{System.Text.RegularExpressions.Regex.Split(Lines(0).ToString, &quot;\s*:\s*&quot;)(1),&#xA;out_incident_number.ToString,&#xA;System.Text.RegularExpressions.Regex.Split(Lines(2).ToString, &quot;\s*:\s*&quot;)(1),&#xA;System.Text.RegularExpressions.Regex.Split(Lines(3).ToString, &quot;\s*:\s*&quot;)(1)}]" DataTable="[dt_out_IncidentData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[System.Text.RegularExpressions.Regex.Split(Lines(0).ToString, &quot;\s*:\s*”)(1)]" />
+                <ui:BuildDataTable DataTable="[dt_out_IncidentData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;WIID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IncidentID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{System.Text.RegularExpressions.Regex.Split(Lines(0).ToString, &quot;\s*:\s*&quot;)(1),&#xA;out_incident_number.ToString,&#xA;System.Text.RegularExpressions.Regex.Split(Lines(2).ToString, &quot;\s*:\s*&quot;)(1),&#xA;System.Text.RegularExpressions.Regex.Split(Lines(3).ToString, &quot;\s*:\s*&quot;)(1)}]" DataTable="[dt_out_IncidentData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
               </Sequence>
             </ActivityAction>
           </usia:Scope.Body>
           <usia:Scope.DesignConnectionRequest>
-            <uiisi:ConnectionParameters AuthType="ElementInstance" ConnectionId="993b37ba-3e01-ed11-b47a-501ac56bcbc8" ConnectionName="2022-07-11T17:26:43.377">
+            <uiisi:ConnectionParameters AuthType="ElementInstance" ConnectionId="da6eb665-3b99-ed11-bf7a-501ac56bb554" ConnectionName="Service Now">
               <uiisi:ConnectionParameters.ClientInfo>
-                <uiisi:ClientInfo ConnectorMetadata="{x:Reference __ReferenceID13}" ClientAssembly="UiPath.ServiceNow.IntegrationService" ClientNamespace="UiPath.ServiceNow.IntegrationService" />
+                <uiisi:ClientInfo ClientAssembly="UiPath.ServiceNow.IntegrationService" ClientNamespace="UiPath.ServiceNow.IntegrationService">
+                  <uiisi:ClientInfo.ConnectorMetadata>
+                    <uiisi:ConnectorMetadata Lookups="{x:Null}" HasDiscoveryAPI="True" Key="uipath-servicenow-servicenow" Version="1.0.30">
+                      <uiisi:ConnectorMetadata.ActivitiesSettings>
+                        <scg:Dictionary x:TypeArguments="x:String, uiisi:ActivitySettings">
+                          <uiisi:ActivitySettings x:Key="GetRecord" EnableSampleValues="True" EnableSampleValuesTest="False" ShowAllFields="False" ShowConfigureButton="True">
+                            <uiisi:ActivitySettings.ObjectsToExclude>
+                              <scg:List x:TypeArguments="x:String" Capacity="0" />
+                            </uiisi:ActivitySettings.ObjectsToExclude>
+                            <uiisi:ActivitySettings.Properties>
+                              <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                            </uiisi:ActivitySettings.Properties>
+                            <uiisi:ActivitySettings.PropertyCategories>
+                              <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                            </uiisi:ActivitySettings.PropertyCategories>
+                          </uiisi:ActivitySettings>
+                          <uiisi:ActivitySettings x:Key="InsertRecord" EnableSampleValues="True" EnableSampleValuesTest="True" ShowAllFields="False" ShowConfigureButton="True">
+                            <uiisi:ActivitySettings.ObjectsToExclude>
+                              <scg:List x:TypeArguments="x:String" Capacity="0" />
+                            </uiisi:ActivitySettings.ObjectsToExclude>
+                            <uiisi:ActivitySettings.Properties>
+                              <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                            </uiisi:ActivitySettings.Properties>
+                            <uiisi:ActivitySettings.PropertyCategories>
+                              <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                            </uiisi:ActivitySettings.PropertyCategories>
+                          </uiisi:ActivitySettings>
+                          <uiisi:ActivitySettings x:Key="UpdateRecord" EnableSampleValues="True" EnableSampleValuesTest="True" ShowAllFields="False" ShowConfigureButton="True">
+                            <uiisi:ActivitySettings.ObjectsToExclude>
+                              <scg:List x:TypeArguments="x:String" Capacity="0" />
+                            </uiisi:ActivitySettings.ObjectsToExclude>
+                            <uiisi:ActivitySettings.Properties>
+                              <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                            </uiisi:ActivitySettings.Properties>
+                            <uiisi:ActivitySettings.PropertyCategories>
+                              <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                            </uiisi:ActivitySettings.PropertyCategories>
+                          </uiisi:ActivitySettings>
+                          <uiisi:ActivitySettings x:Key="DeleteRecord" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="False" ShowConfigureButton="True">
+                            <uiisi:ActivitySettings.ObjectsToExclude>
+                              <scg:List x:TypeArguments="x:String" Capacity="0" />
+                            </uiisi:ActivitySettings.ObjectsToExclude>
+                            <uiisi:ActivitySettings.Properties>
+                              <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                            </uiisi:ActivitySettings.Properties>
+                            <uiisi:ActivitySettings.PropertyCategories>
+                              <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                            </uiisi:ActivitySettings.PropertyCategories>
+                          </uiisi:ActivitySettings>
+                        </scg:Dictionary>
+                      </uiisi:ConnectorMetadata.ActivitiesSettings>
+                      <uiisi:ConnectorMetadata.GeneratedObjectMetadata>
+                        <scg:List x:TypeArguments="uiisi:ObjectMetadata" Capacity="0" />
+                      </uiisi:ConnectorMetadata.GeneratedObjectMetadata>
+                      <uiisi:ConnectorMetadata.ParametersToExclude>
+                        <scg:List x:TypeArguments="x:String" Capacity="4">
+                          <x:String>Authorization</x:String>
+                        </scg:List>
+                      </uiisi:ConnectorMetadata.ParametersToExclude>
+                      <uiisi:ConnectorMetadata.RequiredFields>
+                        <scg:Dictionary x:TypeArguments="x:String, scg:List(x:String)" />
+                      </uiisi:ConnectorMetadata.RequiredFields>
+                    </uiisi:ConnectorMetadata>
+                  </uiisi:ClientInfo.ConnectorMetadata>
+                </uiisi:ClientInfo>
               </uiisi:ConnectionParameters.ClientInfo>
               <uiisi:ConnectionParameters.TelemetryInfo>
                 <uiisi:TelemetryInfo ActivityPack="UiPath.ServiceNow.IntegrationService.Activities" ActivityPackVersion="4.0.1" Source="studio" />
@@ -451,7 +516,7 @@
         </usia:Scope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="412,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="513.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
